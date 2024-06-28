@@ -16,11 +16,8 @@ const helpRoute = require('./routes/helpRoute');
 const app = express();
 const port = 3306;
 
-app.use(cors({
-  origin: 'https://kajas.site', // Allow requests from this origin
-  methods: 'GET,POST,PUT,DELETE',
-  allowedHeaders: 'Content-Type,Authorization',
-}));
+app.options('*', cors()); // Enable preflight requests for all routes
+
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
