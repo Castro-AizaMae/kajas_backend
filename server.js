@@ -16,10 +16,11 @@ const helpRoute = require('./routes/helpRoute');
 const app = express();
 const port = 4000;
 
-app.use('*', (_req, res) => {
-  res.sendFile(`${__dirname}/index.html`);
-});
-app.use(cors());
+app.use(cors({
+  origin: 'https://kajas.site', // Allow requests from this origin
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: 'Content-Type,Authorization',
+}));
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
