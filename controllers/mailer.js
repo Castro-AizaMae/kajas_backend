@@ -26,7 +26,7 @@ const mailer =  async (req, res) => {
                 <h1 style="color: #4D493E; font-size: xx-large; margin: 0; margin-bottom: 8px;">Email Verification</h1>
                 <p style="color: #8E7C70; font-size: 16px; margin-bottom: 23px;">We hope this email finds you well.</p>
                 <p style="color: #8E7C70; font-size: 16px; margin-bottom: 23px;">To complete your registration and activate your account, we need to verify your email address. Please take a moment to confirm your email address by clicking the link below:</p>
-                <p style="color: #8E7C70; font-size: 16px; margin-bottom: 23px;"><a href="http://localhost:4000/api/verify?email=${email}" style="color: #0073e6; text-decoration: none;">Verify Email Address</a></p>
+                <p style="color: #8E7C70; font-size: 16px; margin-bottom: 23px;"><a href="https://kajas-backend.onrender.com/api/verify?email=${email}" style="color: #0073e6; text-decoration: none;">Verify Email Address</a></p>
                 <p style="color: #8E7C70; font-size: 16px; margin-bottom: 23px;">Verifying your email address ensures that you can receive important updates and information about your account. If you did not sign up for this account or believe you received this message in error, please disregard this email.</p>
                 <p style="color: #8E7C70; font-size: 16px; margin-bottom: 23px;">For any questions or assistance, feel free to contact our support team at <a href="mailto:midknightv03@gmail.com" style="color: #0073e6; text-decoration: none;">midknightv03@gmail.com</a>.</p>
                 <p style="color: #8E7C70; font-size: 16px; margin-bottom: 23px;">Thank you for your cooperation.</p>
