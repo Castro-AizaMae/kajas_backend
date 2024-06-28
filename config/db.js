@@ -1,7 +1,7 @@
 const mysql = require('mysql2');
 
 const db = mysql.createConnection({
-  host: 'mysql.hostinger.com',
+  host: 'srv1365.hstgr.io ',
   user: 'u248141963_admin',
   password: 'Y4sXL!eGaQ>',
   database: 'u248141963_kajas'
