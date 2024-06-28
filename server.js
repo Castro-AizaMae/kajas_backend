@@ -16,7 +16,7 @@ const helpRoute = require('./routes/helpRoute');
 const app = express();
 const port = 3306;
 
-app.options('*', cors()); // Enable preflight requests for all routes
+app.use(cors());
 
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
