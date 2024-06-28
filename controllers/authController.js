@@ -94,14 +94,14 @@ const verifyAccount = async (req, res) => {
 
 const login = async (req, res) => {
   const { email, password } = req.body;
-  console.log('oyoyoy');
+  
   if (!email || !password) {
     return res.status(400).json({ message: "Email and password are required!" });
   }
 
   User.findUserByEmail(email, async (err, user) => {
     if (err) {
-      console.error(err);
+      console.err(err);
       return res.status(500).json({ message: "Internal server error." });
     }
     if (!user) {
