@@ -1,4 +1,3 @@
-const { log } = require('@angular-devkit/build-angular/src/builders/ssr-dev-server');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
