@@ -14,7 +14,7 @@ const userRoute = require('./routes/user');
 const helpRoute = require('./routes/helpRoute');
 
 const app = express();
-const port = 4000;
+const port = 3306;
 
 app.use(cors({
   origin: 'https://kajas.site', // Allow requests from this origin
