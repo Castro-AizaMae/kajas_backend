@@ -15,15 +15,26 @@ const helpRoute = require('./routes/helpRoute');
 
 const app = express();
 const port = 3000;
+const allowedOrigins = ['https://kajas.site'];
 
-app.use(cors({ origin: 'https://kajas.site' }));
-app.options('*', cors());
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://kajas.site');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS,PUT,PATCH,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
   next();
 });
 
+app.options('*', (req, res) => {
+  res.header('Access-Control-Allow-Origin', req.headers.origin);
+  res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS,PUT,PATCH,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  res.sendStatus(200);
+});
+
+app.use(cors({ origin: 'https://kajas.site' }));
 
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
